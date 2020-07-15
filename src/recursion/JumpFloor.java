@@ -12,9 +12,4 @@ public class JumpFloor {
 		int ans = jumpFloor(target - 1) + jumpFloor(target - 2);
 		return ans;
 	}
-
-	public static void main(String[] args) {
-		int a = new JumpFloor().jumpFloor(4);
-		System.out.print(a);
-	}
 }

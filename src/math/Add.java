@@ -17,5 +17,4 @@ public class Add {
 		// TODO Auto-generated method stub
 		System.out.println(add(88,21));
 	}
-
 }

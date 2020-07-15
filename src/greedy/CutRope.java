@@ -28,9 +28,4 @@ public class CutRope {
 		return max;
 
 	}
-
-	public static void main(String[] args) {
-		CutRope c = new CutRope();
-		System.out.println(c.cutRope(10));
-	}
 }

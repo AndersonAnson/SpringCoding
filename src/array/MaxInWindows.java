@@ -19,9 +19,4 @@ public class MaxInWindows {
 		}
 		return maxList;
 	}
-
-	public static void main(String[] args) {
-		int[] num = { 2, 3, 4, 2, 6, 2, 5, 1 };
-		System.out.print(MaxInWindows.maxInWindows(num, 3));
-	}
 }

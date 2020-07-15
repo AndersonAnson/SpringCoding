@@ -1,17 +1,9 @@
 package tree;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class ZigzagPrintTree {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 	public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 		int layer = 1;

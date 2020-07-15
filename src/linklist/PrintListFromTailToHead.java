@@ -17,10 +17,4 @@ public class PrintListFromTailToHead {
 		}
 		return ans;
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
