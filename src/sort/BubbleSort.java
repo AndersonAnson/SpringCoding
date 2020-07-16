@@ -28,27 +28,27 @@ public class BubbleSort {
 		return array;
 	}
 
-//	public static void bubbleSort(int[] arr) {
-//		int temp = 0;
-//		boolean flag = false;
-//		for (int i = 0; i < arr.length - 1; i++) {
-//			for (int j = 0; j < arr.length - 1 - i; j++) {
-//				if (arr[j] > arr[j + 1]) {
-//					flag = true;
-//					temp = arr[j + 1];
-//					arr[j + 1] = arr[j];
-//					arr[j] = temp;
-//				}
-//			}
-////			System.out.println("第" + (i + 1) + "趟排序为" + Arrays.toString(arr));
-////			如果没有交换过 flag就false
-//			if (!flag) {
-//				break;
-//			}
-////			交换过就就是true
-//			else {
-//				flag = false;
-//			}
-//		}
-//	}
+	public static void bubbleSortV2(int[] arr) {
+		int temp = 0;
+		boolean flag = false;
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - 1 - i; j++) {
+				if (arr[j] > arr[j + 1]) {
+					flag = true;
+					temp = arr[j + 1];
+					arr[j + 1] = arr[j];
+					arr[j] = temp;
+				}
+			}
+//			System.out.println("第" + (i + 1) + "趟排序为" + Arrays.toString(arr));
+//			如果没有交换过 flag就false
+			if (!flag) {
+				break;
+			}
+//			交换过就就是true
+			else {
+				flag = false;
+			}
+		}
+	}
 }

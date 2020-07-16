@@ -47,36 +47,36 @@ public class RadixSort {
 		return array;
 	}
 
-//	public static void radixSort(int[] arr) {
-////		定义一个二维数组，表示10个桶，每个桶就是一个一维数组
-////		利用空间换时间  为了保证桶不溢出 只能用arr.length
-//		int max = arr[0];
-//		for (int i = 1; i < arr.length; i++) {
-//			if (arr[i] > max) {
-//				max = arr[i];
-//			}
-//		}
-//		int maxDigit = (max + "").length();
-//		int[][] bucket = new int[10][arr.length];
-//		int[] bucketElementCounts = new int[10];
-//		for (int i = 0; i < maxDigit; i++) {
-////			为了记录每个桶中，实际存放了多少个数据，我们定义一个一维数组来记录各个桶的每次放入的数据个数
-//			for (int j = 0, n = 1; j < arr.length; j++, n = n * 10) {
-//				int digitOfElement = ((arr[j] / n) % 10);
-//				bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
-//				bucketElementCounts[digitOfElement]++;
-//			}
-//			int index = 0;
-////			按照桶的顺序 遍历每一个桶 并将桶的数据放入到原来的数组
-//			for (int k = 0; k < bucketElementCounts.length; k++) {
-//				if (bucketElementCounts[k] != 0) {
-//					for (int m = 0; m < bucketElementCounts[k]; m++) {
-//						arr[index++] = bucket[k][m];
-//					}
-//				}
-//				bucketElementCounts[k] = 0;
-//			}
-//		}
-//
-//	}
+	public static void radixSortV2(int[] arr) {
+//		定义一个二维数组，表示10个桶，每个桶就是一个一维数组
+//		利用空间换时间  为了保证桶不溢出 只能用arr.length
+		int max = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		int maxDigit = (max + "").length();
+		int[][] bucket = new int[10][arr.length];
+		int[] bucketElementCounts = new int[10];
+		for (int i = 0; i < maxDigit; i++) {
+//			为了记录每个桶中，实际存放了多少个数据，我们定义一个一维数组来记录各个桶的每次放入的数据个数
+			for (int j = 0, n = 1; j < arr.length; j++, n = n * 10) {
+				int digitOfElement = ((arr[j] / n) % 10);
+				bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];
+				bucketElementCounts[digitOfElement]++;
+			}
+			int index = 0;
+//			按照桶的顺序 遍历每一个桶 并将桶的数据放入到原来的数组
+			for (int k = 0; k < bucketElementCounts.length; k++) {
+				if (bucketElementCounts[k] != 0) {
+					for (int m = 0; m < bucketElementCounts[k]; m++) {
+						arr[index++] = bucket[k][m];
+					}
+				}
+				bucketElementCounts[k] = 0;
+			}
+		}
+
+	}
 }

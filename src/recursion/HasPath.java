@@ -1,7 +1,5 @@
 package recursion;
 
-import org.junit.Test;
-
 public class HasPath {
     boolean[] visited = null;
 
@@ -22,44 +20,21 @@ public class HasPath {
             return false;
         if (len == str.length - 1)
             return true;
-        visited[row * cols + col] = true;// ·ÃÎÊ¹ýÁË
-        // ÏòÉÏ×ß
+        visited[row * cols + col] = true;// ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (row > 0 && walk(matrix, rows, cols, str, row - 1, col, len + 1))
             return true;
-        // ÏòÏÂ×ß
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (row < rows - 1 && walk(matrix, rows, cols, str, row + 1, col, len + 1))
             return true;
-        // ÏòÓÒ×ß
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (col < cols - 1 && walk(matrix, rows, cols, str, row, col + 1, len + 1))
             return true;
-        // Ïò×ó×ß
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (col > 0 && walk(matrix, rows, cols, str, row, col - 1, len + 1))
             return true;
         visited[row * rows + col] = false;
         return false;
-    }
-
-    @Test
-    public static char[][] printMatrix(char[] matrix, int rows, int cols) {
-        char[][] bigMatrix = new char[rows][cols];
-        int row = -1;
-        int col = 0;
-        // ±éÀúmatrix×Ö·ûÊý×é
-        for (int i = 0; i < matrix.length; i++) {
-            if (i % cols == 0) {
-                row++;
-                col = 0;
-            }
-            bigMatrix[row][col] = matrix[i];
-            col++;
-        }
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print(bigMatrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-        return bigMatrix;
     }
 
     public static void main(String[] args) {
